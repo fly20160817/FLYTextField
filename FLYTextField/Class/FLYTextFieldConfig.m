@@ -8,6 +8,8 @@
 
 #import "FLYTextFieldConfig.h"
 
+CGFloat const FLYTextFieldLeftEdgeAutomaticWidth = -1000;
+
 @implementation FLYTextFieldConfig
 
 + (instancetype)defaultConfig
@@ -16,8 +18,7 @@
     
     config.lineColor = [UIColor colorWithRed:236.0/255.0 green:236.0/255.0 blue:236.0/255.0 alpha:1];
     config.lineThickness = 1;
-    
-    config.leftImageFrame = CGRectMake(0, 0, 32, 32);
+    config.leftEdge = FLYTextFieldLeftEdgeAutomaticWidth;
     
     return config;
 }

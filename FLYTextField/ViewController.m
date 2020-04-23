@@ -42,6 +42,8 @@
         config.lineThickness = 0.5;
         
         _accountTF.config = config;
+        
+        _accountTF.backgroundColor = [UIColor cyanColor];
     }
     return _accountTF;
 }

@@ -11,6 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+UIKIT_EXTERN CGFloat const FLYTextFieldLeftEdgeAutomaticWidth;
+
 @interface FLYTextFieldConfig : NSObject
 
 /**是否显示底线*/
@@ -22,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**左侧图片*/
 @property (nonatomic, strong) UIImage * leftImage;
-/**左侧图片的frame (设置的是leftImageView在leftView里的布局，设置图片后还要设置leftEdge的值)*/
+/**左侧图片的frame (设置的是leftImageView在leftView里的布局)*/
 @property (nonatomic, assign) CGRect leftImageFrame;
 
 /**光标左侧的距离 (其实就是leftView的宽度，输入的内容到左侧的距离)*/

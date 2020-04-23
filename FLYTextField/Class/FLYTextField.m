@@ -42,7 +42,15 @@
 
 -(CGRect)leftViewRectForBounds:(CGRect)bounds
 {
-    bounds.size.width = self.config.leftEdge;
+    if( self.config.leftEdge == FLYTextFieldLeftEdgeAutomaticWidth )
+    {
+        bounds.size.width = self.config.leftImageFrame.origin.x * 2 + self.config.leftImageFrame.size.width;
+    }
+    else
+    {
+        bounds.size.width = self.config.leftEdge;
+    }
+    
     return bounds;
 }
 
@@ -93,7 +101,7 @@
     self.lineLayer.backgroundColor = config.lineColor.CGColor;
     self.lineLayer.hidden = !config.showLine;
     self.leftImageView.image = config.leftImage;
-    self.leftImageView.frame = self.config.leftImageFrame;
+    self.leftImageView.frame = config.leftImageFrame;
     
     if ( config.hiddenCursor )
     {
@@ -128,7 +136,6 @@
     if ( _leftImageView == nil )
     {
         _leftImageView = [[UIImageView alloc] init];
-        _leftImageView.contentMode = UIViewContentModeCenter;
     }
     
     return _leftImageView;
